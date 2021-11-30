@@ -1,47 +1,89 @@
-const towers = [...document.getElementsByClassName('column')]
-const firstTower = document.getElementById('first-column')
-const thirdTower = document.getElementById('third-column')
+const towers = [...document.querySelectorAll('.column')]
+const towersPlaceHolder = document.querySelector('.columns')
+const tower1 = document.getElementById('first-column')
+const tower2 = document.getElementById('second-column')
+const tower3 = document.getElementById('third-column')
+const message = document.querySelector('.instruction')
+message.innerHTML = 'Click on a tower to select the disc at the top.'
+const messageBox = document.querySelector('.messageBox')
+const fifthDisc = document.createElement('div')
+const fourthDisc = document.createElement('div')
 const thirdDisc = document.createElement('div')
 const secondDisc = document.createElement('div')
 const firstDisc = document.createElement('div')
-
-
-
-
-console.log(firstTower)
-console.log(towers)
+const countPrint = document.querySelector('.moves')
+let movableDisc = undefined;
 
 
 function createDiscs() {
     thirdDisc.setAttribute('class', 'third-disc')
-    firstTower.appendChild(thirdDisc)
+    tower1.appendChild(thirdDisc)
     secondDisc.setAttribute('class', 'second-disc')
-    firstTower.appendChild(secondDisc)
+    tower1.appendChild(secondDisc)
     firstDisc.setAttribute('class', 'first-disc')
-    firstTower.appendChild(firstDisc)
-    console.log(firstDisc)
-
-    // const secondDisc = document.createElement('div')
-    // const thirdDisc = document.createElement('div')
+    tower1.appendChild(firstDisc)
 }
 createDiscs()
 
-let firstDiscTest = document.getElementsByClassName('first-disc')
 
-console.log(firstDiscTest)
+function dificultyIncrease() {
+    fifthDisc.setAttribute('class', 'fifth-disc')
+    tower1.appendChild(fifthDisc)
+    fourthDisc.setAttribute('class', 'fourth-disc')
+    tower1.appendChild(fourthDisc)
+    thirdDisc.setAttribute('class', 'third-disc')
+    tower1.appendChild(thirdDisc)
+    secondDisc.setAttribute('class', 'second-disc')
+    tower1.appendChild(secondDisc)
+    firstDisc.setAttribute('class', 'first-disc')
+    tower1.appendChild(firstDisc)
+}
+
+
+let count = 0
+
 
 function towersClickHandle(event) {
     let targetEvent = event.currentTarget;
-    let count = targetEvent.childElementCount
-    let whichChild = targetEvent.lastChild
-    thirdTower.appendChild(whichChild)
-    console.log(whichChild)
-    console.log(targetEvent)
-    console.log(count)
-    if (thirdTower.childElementCount === 3) {
+    let amoutOfChildren = targetEvent.childElementCount;
+    let topDisc = targetEvent.lastElementChild;
 
-        alert('You win!')
+    if (movableDisc === undefined) {
+        if (topDisc !== null) {
+
+            movableDisc = topDisc
+            message.innerHTML = "Selected disc:"
+            messageBox.appendChild(movableDisc)
+
+
+
+        }
+    } else if (amoutOfChildren === 0 ||
+        movableDisc.clientWidth < topDisc.clientWidth)
+
+    {
+        targetEvent.appendChild(movableDisc)
+        movableDisc = undefined;
+        message.innerHTML = 'Click on a tower to select the disc at the top.'
+        count += 1
+
+        if (tower3.childElementCount === 1 &&
+            tower2.childElementCount === null &&
+            tower3.childElementCount === null) {
+            message.innerHTML = 'Congratulations...I guess...'
+
+        } else if (tower3.childElementCount === 3) {
+            message.innerHTML = 'Easy eh?'
+
+        } else if (tower3.childElementCount === 5) {
+            message.innerHTML = 'Well, that took a while...'
+        }
+
     }
+    countPrint.innerHTML = 'Moves: ' + count
+
+
+    console.log(topDisc)
 
 }
 
@@ -49,14 +91,45 @@ function towersClickHandle(event) {
 towers.forEach(id => {
     id.addEventListener('click', towersClickHandle)
 })
-<<<<<<< HEAD
 
 
 
+function restartGame() {
+    count = 0
+    countPrint.innerHTML = 'Moves: ' + count
+    movableDisc = undefined
+    message.innerHTML = 'Click on a tower to select the disc at the top.'
 
+    createDiscs()
+    if (towersPlaceHolder.childElementCount) {
+        console.log(true)
+    } else {
+        console.log(false)
+    }
 
+}
 
-// If the first child width of a tower is greater than the first child width 
-// of the other chosen tower, the greatest width disc shan't be moved.
-=======
->>>>>>> 96325474b1e4ff7c30c41233cbe93c70bce3052a
+function increaDifficultyButton() {
+    count = 0
+    countPrint.innerHTML = 'Moves: ' + count
+    movableDisc = undefined
+    message.innerHTML = 'That will take some time...'
+    dificultyIncrease()
+}
+
+function lowerDifficulty() {
+    count = 0
+    countPrint.innerHTML = 'Moves: ' + count
+    movableDisc = undefined
+
+    if (tower1.childElementCount === 3) {
+        createDiscs()
+        tower1.removeChild(thirdDisc)
+        tower1.removeChild(secondDisc)
+        message.innerHTML = 'Are you serious?!'
+
+    } else {
+        tower1.removeChild(fourthDisc)
+        tower1.removeChild(fifthDisc)
+    }
+}
