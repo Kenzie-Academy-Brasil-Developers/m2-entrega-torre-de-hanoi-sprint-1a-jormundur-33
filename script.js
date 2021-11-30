@@ -49,6 +49,7 @@ function towersClickHandle(event) {
 towers.forEach(id => {
     id.addEventListener('click', towersClickHandle)
 })
+<<<<<<< HEAD
 
 
 
@@ -57,3 +58,5 @@ towers.forEach(id => {
 
 // If the first child width of a tower is greater than the first child width 
 // of the other chosen tower, the greatest width disc shan't be moved.
+=======
+>>>>>>> 96325474b1e4ff7c30c41233cbe93c70bce3052a
