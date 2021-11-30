@@ -13,3 +13,9 @@
     justify-content: space-evenly;
     align-items: center;
 }
+
+.block{
+    background-color: red;
+    width: 40px;
+    height: 90px;
+}
