@@ -1,5 +1,5 @@
 const towers = [...document.querySelectorAll('.column')]
-const towersPlaceHolder = document.querySelector('.columns')
+const towersPlaceHolder = document.querySelector('.back')
 const tower1 = document.getElementById('first-column')
 const tower2 = document.getElementById('second-column')
 const tower3 = document.getElementById('third-column')
@@ -90,7 +90,7 @@ function towersClickHandle(event) {
 
 towers.forEach(id => {
     id.addEventListener('click', towersClickHandle)
-},1000)
+})
 
 
 
