@@ -89,11 +89,11 @@ h3 {
     width: 100%;
     box-shadow: 1px 2px 2px #222222;
 }
-#disc{
+/* #disc{
     z-index: 2;
     transition: left .2s, bottom .2s .2s;
     pointer-events: none;
-}
+} */
 .first-disc {
     background-color: blue;
     border-radius: 15px 15px 15px 15px;
@@ -168,4 +168,52 @@ footer {
 }
 .decreaseDifficulty-button:hover{
     box-shadow: 0px 0px 0px #222222;
+}
+
+
+@media screen and (max-width: 425px){
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+    h1 {
+        margin: 43px 0px 10px 0px;
+        font-size: 25px;
+    }
+    h2{
+        font-size: 15px;
+        text-align: center;
+    }
+    /* h3{
+
+    } */
+
+    .column {
+        margin: 99px 0 0 45px;
+    }
+
+    .first-disc {
+        width: 35px;
+    }
+    
+    .second-disc {
+        width: 55px;
+    }
+    
+    .third-disc {
+        width: 75px;
+    }
+    
+    .fourth-disc {
+        width: 150px;
+    }
+    
+    .fifth-disc {
+        width: 100px;
+    }
+    footer {
+
+        flex-direction: column;
+        margin: 30px 56px 0px 53px;
+    }
 }
