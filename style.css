@@ -1,3 +1,24 @@
+h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+h3 {
+    text-align: center;
+    font-size: 20px;
+}
+
+.messageBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.instruction {
+    margin-right: 10px;
+}
+
 .column {
     display: flex;
     flex-direction: column-reverse;
@@ -7,9 +28,14 @@
     height: 200px;
 }
 
+.column:hover {
+    cursor: pointer;
+    background-color: gray;
+}
+
 .columns {
+    margin-top: 350px;
     display: flex;
-    height: 1200px;
     justify-content: space-evenly;
     align-items: center;
 }
@@ -33,12 +59,26 @@
     background-color: blueviolet;
     border-radius: 15px 15px 15px 15px;
     height: 15px;
-    width: 100px;
+    width: 110px;
 }
 
 .third-disc {
     background-color: chartreuse;
     border-radius: 15px 15px 15px 15px;
     height: 15px;
-    width: 120px;
+    width: 140px;
+}
+
+.fourth-disc {
+    background-color: rgb(247, 0, 255);
+    border-radius: 15px 15px 15px 15px;
+    height: 15px;
+    width: 170px;
+}
+
+.fifth-disc {
+    background-color: crimson;
+    border-radius: 15px 15px 15px 15px;
+    height: 15px;
+    width: 200px;
 }
