@@ -10,19 +10,38 @@
 </head>
 
 <body>
-    <div class="columns">
-        <div class="column" id="first-column">
-            <div class="base"> Start</div>
-        </div>
-        <div class="column" id="second-column">
-            <div class="base"> Offset</div>
+    <header>
 
-        </div>
-        <div class="column" id="third-column">
-            <div class="base"> End</div>
+        <h1>Welcome to the Tower of Hanoi!</h1>
+        <div class="messageBox">
 
+            <h2 class="instruction"></h2>
         </div>
-    </div>
+        <h3 class="moves">Moves: 0</h3>
+
+    </header>
+    <main>
+
+        <div class="columns">
+            <div class="column" id="first-column">
+            </div>
+            <div class="column" id="second-column">
+
+            </div>
+            <div class="column" id="third-column">
+
+            </div>
+        </div>
+        <h2 class="count"></h2>
+        <div class="base"></div>
+    </main>
+    <footer>
+       
+        <button class="difficulty-button" onclick="increaDifficultyButton()">Increase difficulty / Reset</button>
+        <button class="restart-button" onclick="restartGame()">Restart game / Difficulty Reset</button>
+        <button class="decreaseDifficulty-button" onclick="lowerDifficulty()">Decrease difficulty</button>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 
