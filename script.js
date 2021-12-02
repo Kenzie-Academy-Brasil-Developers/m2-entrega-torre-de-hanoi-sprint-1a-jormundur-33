@@ -75,6 +75,7 @@ function towersClickHandle(event) {
 
         } else if (tower3.childElementCount === 3) {
             message.innerHTML = 'Easy eh?'
+            alert("Victory!");
 
         } else if (tower3.childElementCount === 5) {
             message.innerHTML = 'Well, that took a while...'
