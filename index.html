@@ -21,21 +21,31 @@
 
     </header>
     <main>
-        <div class="columns">
-            <div class="column" id="first-column">
+        <div class="top">
+            <p>Start</p>
+            <p>Transition</p>
+            <p>End</p>
+        </div>
+        <div class="back">
+            <div class="columns">
+                <div class="column" id="first-column"></div>
             </div>
-            <div class="column" id="second-column">
-
+            <div class="columns">
+                <div class="column" id="second-column"></div>
             </div>
-            <div class="column" id="third-column">
-
+            <div class="columns">
+                <div class="column" id="third-column"></div>
             </div>
         </div>
+
         <h2 class="count"></h2>
+        <div class="base"></div>
+
     </main>
     <footer>
-        <button class="restart-button" onclick="restartGame()">Restart game / Difficulty Reset</button>
+
         <button class="difficulty-button" onclick="increaDifficultyButton()">Increase difficulty / Reset</button>
+        <button class="restart-button" onclick="restartGame()">Restart game</button>
         <button class="decreaseDifficulty-button" onclick="lowerDifficulty()">Decrease difficulty</button>
     </footer>
 

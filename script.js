@@ -1,5 +1,6 @@
 const towers = [...document.querySelectorAll('.column')]
-const towersPlaceHolder = document.querySelector('.columns')
+    // const towersPlaceHolder = document.querySelector('.columns')
+const towersPlaceHolder = document.querySelector('.back')
 const tower1 = document.getElementById('first-column')
 const tower2 = document.getElementById('second-column')
 const tower3 = document.getElementById('third-column')
@@ -133,3 +134,14 @@ function lowerDifficulty() {
         tower1.removeChild(fifthDisc)
     }
 }
+
+
+function movingDiscs() {
+    firstDisc.setAttribute('id', 'disc')
+    secondDisc.setAttribute('id', 'disc')
+    thirdDisc.setAttribute('id', 'disc')
+    fourthDisc.setAttribute('id', 'disc')
+    fifthDisc.setAttribute('id', 'disc')
+
+}
+movingDiscs();
