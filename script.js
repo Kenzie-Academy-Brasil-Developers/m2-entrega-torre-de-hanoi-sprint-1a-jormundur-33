@@ -106,20 +106,24 @@ towers.forEach(id => {
     id.addEventListener('click', towersClickHandle)
 })
 
-
-function winFunc() {
+function timer() {
     const countTimer = document.getElementById('timer')
-    let timer = 5
+    let timer = 6
 
-    setTimeout(countDown, 1000);
+    setTimeout(countDown, 0);
 
     function countDown() {
+
         timer--;
         if (timer > 0) {
             setTimeout(countDown, 1000);
         }
         countTimer.innerHTML = `Restarting game in: ${timer} seconds.`
     }
+}
+
+function winFunc() {
+
 
     const winMessage = document.getElementById('win-message')
     if (tower3.childElementCount === 1 &&
@@ -127,15 +131,16 @@ function winFunc() {
         tower1.childElementCount === 0) {
         winMessage.innerHTML = 'Congratulations...I guess...'
         modal.style.display = "block";
+        timer()
         setTimeout(function() {
             restartGame()
 
-            console.log(timer)
             modal.style.display = 'none'
         }, 5000)
     } else if (tower3.childElementCount === 5) {
         winMessage.innerHTML = 'Well, that took a while...'
         modal.style.display = "block";
+        timer()
         setTimeout(function() {
             restartGame()
 
@@ -146,6 +151,7 @@ function winFunc() {
         tower1.childElementCount === 0) {
         winMessage.innerHTML = 'Easy, eh?'
         modal.style.display = "block";
+        timer()
         setTimeout(function() {
             restartGame()
 
@@ -153,6 +159,7 @@ function winFunc() {
         }, 5000)
 
     }
+
 }
 let difficulty = false
 let easyMode = false
