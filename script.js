@@ -67,19 +67,8 @@ function towersClickHandle(event) {
         movableDisc = undefined;
         message.innerHTML = 'Click on a tower to select the disc at the top.'
         count += 1
-
-        if (tower3.childElementCount === 1 &&
-            tower2.childElementCount === null &&
-            tower3.childElementCount === null) {
-            message.innerHTML = 'Congratulations...I guess...'
-
-        } else if (tower3.childElementCount === 3) {
-            message.innerHTML = 'Easy eh?'
-
-        } else if (tower3.childElementCount === 5) {
-            message.innerHTML = 'Well, that took a while...'
-        }
-
+ victory()
+   
     }
     countPrint.innerHTML = 'Moves: ' + count
 
@@ -87,7 +76,20 @@ function towersClickHandle(event) {
     console.log(topDisc)
 
 }
+function victory(){
+    if (tower3.childElementCount === 1 &&
+        tower2.childElementCount === null &&
+        tower3.childElementCount === null) {
+        message.innerHTML = 'Congratulations...I guess...'
 
+    } else if (tower3.childElementCount === 3) {
+        message.innerHTML = 'Easy eh?'
+        alert("Victory!");
+
+    } else if (tower3.childElementCount === 5) {
+        message.innerHTML = 'Well, that took a while...'
+    }
+}
 
 towers.forEach(id => {
     id.addEventListener('click', towersClickHandle)
