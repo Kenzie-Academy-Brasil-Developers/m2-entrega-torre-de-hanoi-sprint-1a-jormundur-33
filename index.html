@@ -18,7 +18,14 @@
             <h2 class="instruction"></h2>
         </div>
         <h3 class="moves">Moves: 0</h3>
+        <div id="winModal" class="modal">
 
+            <div class="modal-content">
+                <p id="win-message"></p>
+                <span id="timer"></span>
+            </div>
+
+        </div>
     </header>
     <main>
         <div class="top">
@@ -27,14 +34,11 @@
             <p>End</p>
         </div>
         <div class="back">
-            <div class="columns">
-                <div class="column" id="first-column"></div>
+            <div id="towerDiv1" class="columns">
             </div>
-            <div class="columns">
-                <div class="column" id="second-column"></div>
+            <div id="towerDiv2" class="columns">
             </div>
-            <div class="columns">
-                <div class="column" id="third-column"></div>
+            <div id="towerDiv3" class="columns">
             </div>
         </div>
 
@@ -44,7 +48,7 @@
     </main>
     <footer>
 
-        <button class="difficulty-button" onclick="increaDifficultyButton()">Increase difficulty / Reset</button>
+        <button class="difficulty-button" onclick="increaseDifficultyButton()">Increase difficulty / Reset</button>
         <button class="restart-button" onclick="restartGame()">Restart game</button>
         <button class="decreaseDifficulty-button" onclick="lowerDifficulty()">Decrease difficulty</button>
     </footer>
