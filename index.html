@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+
+        <h1>Welcome to the Tower of Hanoi!</h1>
+        <div class="messageBox">
+
+            <h2 class="instruction"></h2>
+        </div>
+        <h3 class="moves">Moves: 0</h3>
+        <div id="winModal" class="modal">
+
+            <div class="modal-content">
+                <p id="win-message"></p>
+                <span id="timer"></span>
+            </div>
+
+        </div>
+    </header>
+    <main>
+        <div class="top">
+            <p>Start</p>
+            <p>Transition</p>
+            <p>End</p>
+        </div>
+        <div class="back">
+            <div id="towerDiv1" class="columns">
+            </div>
+            <div id="towerDiv2" class="columns">
+            </div>
+            <div id="towerDiv3" class="columns">
+            </div>
+        </div>
+
+        <h2 class="count"></h2>
+        <div class="base"></div>
+
+    </main>
+    <footer>
+
+        <button class="difficulty-button" onclick="increaseDifficultyButton()">Increase difficulty / Reset</button>
+        <button class="restart-button" onclick="restartGame()">Restart game</button>
+        <button class="decreaseDifficulty-button" onclick="lowerDifficulty()">Decrease difficulty</button>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
